@@ -1,7 +1,11 @@
-render.yaml
 services:
   - type: web
     name: wordpress
     plan: free
     runtime: docker
-    repo: https://github.com/render-examples/wordpress
+    dockerfilePath: Dockerfile
+    dockerContext: https://github.com/render-examples/wordpress.git
+    dockerLink: false
+    envVars:
+      - key: WORDPRESS_VERSION
+        value: latest
